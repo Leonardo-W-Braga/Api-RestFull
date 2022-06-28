@@ -4,7 +4,7 @@ const taskSchema = new mongoose.Schema(
     {
         id:{type:String},
         description:{type:String},
-        date:{type:String},//possibly change later
+        date:{type:Date},//possibly change later
         user:{type: String,ref:'users',required:true}
     }
 

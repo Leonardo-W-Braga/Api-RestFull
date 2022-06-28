@@ -4,12 +4,12 @@ const userSchema = new mongoose.Schema(
     {
         id:{type:String},
         name:{type:String,required:true},
-        cpf:{type:String,required:true},
-        birthDate:{type:String,required:true}, //possibly change later
+        cpf:{type:Number,required:true},
+        birthDate:{type:Date,required:true}, //possibly change later
         email:{type:String,required:true},
         password:{type:String,required:true},
         address:{type:String,required:true},
-        number:{type:String,required:true},
+        number:{type:Number,required:true},
         complement:{type:String,required:true},
         city:{type:String,required:true},
         state:{type:String,required:true},
