@@ -1,54 +1,53 @@
-let user = document.getElementById("formulary");
 
-console.log(user);
+function fazPost(url, body){
+    console.log("Body = ", body)
+    let request = new XMLHttpRequest;
+    request.open("POST", url, true);
+    request.setRequestHeader("Content-type", "application/json")
+    request.send(JSON.stringify(body));
 
-let inputName = document.querySelector("#name");
-let inputCpf = document.querySelector("#cpf");
-let inputBirthDate = document.querySelector("#birthDate");
-let inputEmail = document.querySelector("#email");
-let inputPassword = document.querySelector("#password");
-let inputAddress = document.querySelector("#address");
-let inputNumber = document.querySelector("#number");
-let inputComplement = document.querySelector("#complement");
-let inputCity = document.querySelector("#city");
-let inputState = document.querySelector("#state");
-let inputCountry = document.querySelector("#country");
-let inputZipcode = document.querySelector("#zipcode");
+    request.onload = function(){
+        console.log(this.responseText)
+    }
+    return request.responseText
+}
 
-let post = document.querySelector("#button")
 
-post.addEventListener("click", function(){
-    alert("fui clicado")
-})
+function cadastrarUsuario(){
+    event.preventDefault()
+    url = " http://localhost:3000/api/v1/user"
+    let inputName = document.getElementById("name").value
+    let inputCpf = document.getElementById("cpf").value
+    let inputBirthDate = document.getElementById("birthDate").value;
+    let inputEmail = document.getElementById("email").value;
+    let inputPassword = document.getElementById("password").value;
+    let inputAddress = document.getElementById("address").value;
+    let inputNumber = document.getElementById("number").value;
+    let inputComplement = document.getElementById("complement").value;
+    let inputCity = document.getElementById("city").value;
+    let inputState = document.getElementById("state").value;
+    let inputCountry = document.getElementById("country").value;
+    let inputZipcode = document.getElementById("zipCode").value;
 
-let dict_values = {
-    'name': inputName,
-    'cpf': inputCpf,
-    'birthDate': inputBirthDate,
-    'email': inputEmail,
-    'password': inputPassword,
-    'address': inputAddress,
-    'number': inputNumber,
-    'complement': inputComplement,
-    'city': inputCity,
-    'state': inputState,
-    'country':inputCountry,
-    'zipCode': inputZipcode
+    console.log(inputName);
 
-};
+    body = {
+        "name": inputName,
+        "cpf": inputCpf,
+        "birthDate": inputBirthDate,
+        "email": inputEmail,
+        "password": inputPassword,
+        "address": inputAddress,
+        "number": inputNumber,
+        "complement": inputComplement,
+        "city": inputCity,
+        "state": inputState,
+        "country": inputCountry,
+        "zipCode": inputZipcode
+    }
 
-let x = new XMLHttpRequest;
-
-x.open("POST", "http://localhost:3000/api/v1/user");
-
-x.setRequestHeader("Accept", "application/json");
-x.setRequestHeader("Content-Type", "application/json");
-
-x.onload = () => console.log(x.responseText);
-
-x.send(dict_values);
-
-x.send(JSON.stringify(dict_values));
+    fazPost(url, body)
+}
 
 
 

@@ -24,9 +24,9 @@ class userController{
         })
     }
     static setUser = (req:Request,res:Response) =>{
-        res.setHeader('Access-Control-Allow-Origin', '*');
-        res.setHeader('Access-Control-Allow-Methods', '*');
-        res.setHeader('Access-Control-Allow-Headers', '*');
+        // res.setHeader('Access-Control-Allow-Origin', '*');
+        // res.setHeader('Access-Control-Allow-Methods', '*');
+        // res.setHeader('Access-Control-Allow-Headers', '*');
         let user = new users(req.body);
 
         user.save((err:any)=>{
