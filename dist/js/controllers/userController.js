@@ -21,9 +21,6 @@ userController.getUserById = (req, res) => {
     });
 };
 userController.setUser = (req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', '*');
-    res.setHeader('Access-Control-Allow-Headers', '*');
     let user = new users(req.body);
     user.save((err) => {
         if (err) {

@@ -1,6 +1,6 @@
 
 function fazPost(url, body){
-    console.log("Body = ", body)
+   // console.log("Body = ", body)
     let request = new XMLHttpRequest;
     request.open("POST", url, true);
     request.setRequestHeader("Content-type", "application/json")
@@ -11,6 +11,10 @@ function fazPost(url, body){
     }
     return request.responseText
 }
+
+
+
+
 
 
 function cadastrarUsuario(){
@@ -29,7 +33,6 @@ function cadastrarUsuario(){
     let inputCountry = document.getElementById("country").value;
     let inputZipcode = document.getElementById("zipCode").value;
 
-    console.log(inputName);
 
     body = {
         "name": inputName,
@@ -51,3 +54,7 @@ function cadastrarUsuario(){
 
 
 
+let buttonPost = document.querySelector("#post")
+buttonPost.addEventListener("click", function(){
+   alert("New user added")
+})
