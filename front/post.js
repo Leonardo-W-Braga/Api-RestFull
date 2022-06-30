@@ -7,7 +7,7 @@ function fazPost(url, body){
     request.send(JSON.stringify(body));
 
     request.onload = function(){
-        console.log(this.responseText)
+        alert(this.responseText)
     }
     return request.responseText
 }
@@ -55,6 +55,9 @@ function cadastrarUsuario(){
 
 
 let buttonPost = document.querySelector("#post")
-buttonPost.addEventListener("click", function(){
-   alert("New user added")
+buttonPost.addEventListener("click", function(e){
+   //alert("New user added")
+    e.preventDefault();
+   cadastrarUsuario();
 })
+

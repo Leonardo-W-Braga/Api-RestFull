@@ -27,7 +27,7 @@ userController.setUser = (req, res) => {
             res.status(500).send({ message: `${err.message} - user register failed.` });
         }
         else {
-            res.status(201).send(user.toJSON());
+            res.status(201).send({message: `New user added`});
         }
     });
 };

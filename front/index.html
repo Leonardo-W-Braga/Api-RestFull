@@ -9,9 +9,9 @@
     </head>
     <body>
         
-        <h1> <a href="search.html">Search</a> </h1>
-         
-        <form onsubmit="cadastrarUsuario()" id="formulary">
+        <h1>User</h1> 
+
+        <form id="formulary">
             <section id="form">
                 <input type="text" id="name"  placeholder="Name" required>
                 <input type="number" id="cpf" placeholder="CPF" required>
@@ -37,7 +37,19 @@
                 Get Users
            </button>
         </form>
+
+
+        <label for="ID">ID</label>
+        <input type="text" id="ID">
+        <input onclick="deleteUser()" type="button" value="delete">
+
+        <label for="ID-label"></label>
+        <input type="text" name="" id="ID-get">
+        <input onclick="getUser()" type="button" value="get">
+
     </body>
     <script src="fetch.js"></script>
     <script src="post.js"></script>
+    <script src="delete.js"></script>
+    <script src="get.js"></script>
 </html>
